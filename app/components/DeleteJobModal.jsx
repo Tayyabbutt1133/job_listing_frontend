@@ -7,7 +7,7 @@ const DeleteJobModal = ({ jobId, onClose, onDeleted }) => {
     const handleDelete = async () => {
         setLoading(true);
         try {
-            await axios.delete(`http://localhost:5000/jobs/${jobId}`);
+            await axios.delete(`${process.env.NEXT_PUBLIC_BASE_URL}/jobs/${jobId}`);
             onDeleted(true); // tell parent job was deleted
             onClose();
         } catch (error) {

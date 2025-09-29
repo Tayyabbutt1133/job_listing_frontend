@@ -16,7 +16,7 @@ const EditJobModal = ({ job, onClose, onUpdated }) => {
 
         try {
             const response = await axios.put(
-                `http://localhost:5000/jobs/${formData.id}`,
+                `${process.env.NEXT_PUBLIC_BASE_URL}/jobs/${formData.id}`,
                 formData
             );
 
